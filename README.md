@@ -1,1 +1,1 @@
-mo¿e siê uda w koñcu
+Repozytorium grupy kursow "Technologir Programowania"
