@@ -1,0 +1,30 @@
+@startuml
+
+class App
+class Frame{
+    Dialog
+}
+class MenuBar{
+    parent
+}
+class Button{
+    parent
+    setDialogVisible(0
+}
+Class Dialog{
+    text: "Hello World!"
+}
+class MenuItem{
+    change color()
+}
+
+App - Frame
+Frame -- MenuBar
+MenuBar -- MenuItem
+Frame -- Button
+Button -> Dialog
+Frame -- Dialog
+
+
+
+@enduml
