@@ -19,11 +19,11 @@ class MenuItem{
 }
 
 App - Frame
-Frame -- MenuBar
-MenuBar -- MenuItem
-Frame -- Button
-Button -> Dialog
-Frame -- Dialog
+Frame o-- MenuBar
+MenuBar o-- MenuItem
+Frame o-- Button
+
+Frame o-- Dialog
 
 
 
