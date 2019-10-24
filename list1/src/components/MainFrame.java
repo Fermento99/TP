@@ -10,6 +10,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         super("Hello");
+        setContentPane(new Container());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         setBounds(100,100,300,300);
@@ -24,7 +25,9 @@ public class MainFrame extends JFrame {
     }
 
     public void randomizeBackgroundColor() {
-        popup.setBackground(randomizeColor());
+        Color bColor = randomizeColor();
+        this.setBackground(bColor);
+        popup.setBackground(bColor);
     }
 
     private Color randomizeColor() {

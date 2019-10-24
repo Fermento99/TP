@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class HelloButton extends JButton {
-    MainFrame parent;
+    final MainFrame parent;
 
-    HelloButton(MainFrame p) {
+    HelloButton(final MainFrame p) {
         super("Press me!");
         parent = p;
         setBackground(new Color(200,180,100));
@@ -15,7 +15,7 @@ public class HelloButton extends JButton {
     }
 
     @Override
-    protected void fireActionPerformed(ActionEvent event) {
+    protected void fireActionPerformed(final ActionEvent event) {
         parent.popup.setVisible(true);
     }
 }

@@ -7,15 +7,15 @@ public class OptionMenu extends JMenu {
 
     OptionMenu(MainFrame parent) {
         super("Options");
-        add(new JMenuItem("randomize font color") {
+        add(new JMenuItem("randomize background color") {
             @Override
-            protected void fireActionPerformed(ActionEvent event) {
+            protected void fireActionPerformed(final ActionEvent event) {
                 parent.randomizeBackgroundColor();
             }
         });
         add(new JMenuItem("randomize button color") {
             @Override
-            protected void fireActionPerformed(ActionEvent event) {
+            protected void fireActionPerformed(final ActionEvent event) {
                 parent.randomizeButtonColor();
             }
         });
