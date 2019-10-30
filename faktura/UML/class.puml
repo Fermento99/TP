@@ -40,6 +40,7 @@ class GUI {
 
 }
 
+
 GUI -- ClientHandler
 GUI -- InvoiceHandler
 blocks.Invoice *-- blocks.Client

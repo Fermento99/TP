@@ -4,15 +4,15 @@ import java.util.Date;
 
 public class Invoice {
     private final Date deliveryDate;
-    private final int ID;
+    private final int id; //NOPMD
     private final Client client;
     private final InvoiceElement[] invoiceElements;
 
-    public Invoice(Date deliveryDate, int id, Client client, InvoiceElement[] invoiceelements) {
+    public Invoice(final Date deliveryDate, final int id, final Client client, final InvoiceElement[] invoiceElements) { //NOPMD
         this.deliveryDate = deliveryDate;
-        this.ID = id;
+        this.id = id;
         this.client = client;
-        this.invoiceElements = invoiceelements;
+        this.invoiceElements = invoiceElements;
     }
 
     public Client getClient() {
@@ -23,25 +23,25 @@ public class Invoice {
         return deliveryDate;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
     public InvoiceElement[] getInvoiceElements() {
         return invoiceElements;
     }
 
-    public double totalTax(){
-        double ac = 0;
-        for (InvoiceElement element : invoiceElements) {
+    public double totalTax() {
+        double ac = 0; //NOPMD
+        for (final InvoiceElement element : invoiceElements) {
             ac += element.totalValue();
         }
         return ac;
     }
 
     public double totalValue() {
-        double ac = 0;
-        for (InvoiceElement element : invoiceElements) {
+        double ac = 0; //NOPMD
+        for (final InvoiceElement element : invoiceElements) {
             ac += element.totalTax();
         }
         return ac;

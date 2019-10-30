@@ -3,28 +3,45 @@ package blocks;
 public class Client {
     private final String name;
     private final String surname;
-    private final Address adress;
-    private final int PESEL;
+    private final Address address;
+    private final int pesel;
 
-    public Client(final String name, final String surname, final Address adress, final int PESEL) throws Exception{
-        if(!(validate(PESEL, adress)))
+    public Client(final String name, final String surname, final Address address, final int pesel) throws Exception {
+        if (!(validate(pesel, address))) {
             throw new Exception();
+        }
         this.name = name;
         this.surname = surname;
-        this.adress = adress;
-        this.PESEL = PESEL;
+        this.address = address;
+        this.pesel = pesel;
     }
 
-    private boolean validate(int PESEL, Address adress) {
-        return (checkPESEL(PESEL) && checkAdress(adress));
+    public String getName() {
+        return name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public int getPesel() {
+        return pesel;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    private boolean validate(final int pesel, final Address adress) {
+        return checkPESEL(pesel) && checkAdress(adress);
 
     }
     //doesn't exist yet
-    private boolean checkPESEL(int pesel) {
+    private boolean checkPESEL(final int pesel) {
         return true;
     }
 
-    private boolean checkAdress(Address adress){
+    private boolean checkAdress(final Address adress) {
         return Address.check(adress);
     }
 }

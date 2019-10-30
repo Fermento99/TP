@@ -18,8 +18,32 @@ public class Address {
         this.flatNr = flatNr;
     }
 
+    public int getFlatNr() {
+        return flatNr;
+    }
+
+    public int getHouseNr() {
+        return houseNr;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
     // doesn't exist yet
-    static boolean check(Address adress) {
+    public static boolean check(final Address adress) {
         return true;
     }
 }
