@@ -1,0 +1,6 @@
+@startuml
+
+User --> (Browsing invoices)
+User --> (Add an invoice for a client)
+
+@enduml

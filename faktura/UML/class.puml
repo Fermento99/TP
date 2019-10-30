@@ -1,0 +1,51 @@
+@startuml
+
+class blocks.Invoice {
+    ID
+    data wystawienia
+    tax()
+    totalValue()
+}
+
+class blocks.Client {
+    Imię
+    Nazwisko
+    Adres
+    PESEL
+    validate()
+}
+
+class blocks.InvoiceElement{
+    Nazwa
+    Cena
+    Stawaka VAT
+    Ilość
+    tax()
+    totalValue()
+}
+
+class InvoiceHandler{
+    ArrayList faktury
+    createInvoice()
+    showInvoice()
+}
+
+class ClientHandler{
+    ArrayList klienci
+    createClient()
+    ? addClientToInvoice() ?
+}
+
+class GUI {
+
+}
+
+GUI -- ClientHandler
+GUI -- InvoiceHandler
+blocks.Invoice *-- blocks.Client
+blocks.Invoice o-- blocks.InvoiceElement
+InvoiceHandler -- blocks.Invoice
+InvoiceHandler - blocks.InvoiceElement
+ClientHandler --- blocks.Client
+
+@enduml
