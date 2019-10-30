@@ -1,6 +1,6 @@
 package blocks;
 
-public class Adress {
+public class Address {
     private final String street;
     private final String city;
     private final String country;
@@ -9,7 +9,7 @@ public class Adress {
     private final int flatNr;
 
 
-    public Adress(final String street, final String city, final String country, final int postalCode, final int houseNr, final int flatNr) {
+    public Address(final String street, final String city, final String country, final int postalCode, final int houseNr, final int flatNr) {
         this.street = street;
         this.city = city;
         this.country = country;
@@ -19,7 +19,7 @@ public class Adress {
     }
 
     // doesn't exist yet
-    static boolean check(Adress adress) {
+    static boolean check(Address adress) {
         return true;
     }
 }
