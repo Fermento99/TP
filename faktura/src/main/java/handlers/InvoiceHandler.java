@@ -5,16 +5,18 @@ import blocks.Invoice;
 import blocks.InvoiceElement;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class InvoiceHandler {
-    private ArrayList<Invoice> invoices = null;
+    private static ArrayList<Invoice> invoices = new ArrayList<Invoice>();
+    private static int invoiceId = 0;
 
-    public void createInvoice(final Date deliveryDate, final int id, final Client client, final InvoiceElement[] invoiceElements) {
-        invoices.add(new Invoice(deliveryDate, id, client, invoiceElements));
+    public static void createInvoice(final String deliveryDate, final Client client, final ArrayList<InvoiceElement> invoiceElements) {
+        invoiceId++;
+        invoices.add(new Invoice(deliveryDate, invoiceId, client, invoiceElements));
     }
 
-    public ArrayList<Invoice> getInvoices() {
+    public static ArrayList<Invoice> getInvoices() {
         return invoices;
     }
+    public static Invoice getInvoice(int id) { return invoices.get(--id); }
 }

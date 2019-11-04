@@ -37,17 +37,36 @@ class handlers.ClientHandler{
     ? addClientToInvoice() ?
 }
 
-class GUI {
+class adapters.Adapter {
+
+}
+class handlers.InvoiceElementHandler {
 
 }
 
+class GUI.MainFrame{
 
-GUI -- handlers.ClientHandler
-GUI -- handlers.InvoiceHandler
-blocks.Invoice *-- blocks.Client
+}
+
+class GUI.NewInvoiceFrame {
+    createInvoice()
+}
+
+class GUI.ShowInvoicesFrame {
+    showInvoices()
+}
+
+GUI.NewInvoiceFrame -- adapters.Adapter
+GUI.MainFrame -- GUI.ShowInvoicesFrame
+GUI.MainFrame -- GUI.NewInvoiceFrame
+GUI.ShowInvoicesFrame -- handlers.InvoiceHandler
+adapters.Adapter -- handlers.ClientHandler
+adapters.Adapter -- handlers.InvoiceHandler
+adapters.Adapter -- handlers.InvoiceElementHandler
+blocks.Invoice *- blocks.Client
 blocks.Invoice o-- blocks.InvoiceElement
 handlers.InvoiceHandler -- blocks.Invoice
-handlers.InvoiceHandler - blocks.InvoiceElement
 handlers.ClientHandler --- blocks.Client
+handlers.InvoiceElementHandler -- blocks.InvoiceElement
 
 @enduml
