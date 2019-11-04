@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class MainFrame extends JFrame {
-    NewInvoiceFrame newFrame = new NewInvoiceFrame();
-    JButton createInvoice = new JButton("create invoice") {
+    private NewInvoiceFrame newFrame = new NewInvoiceFrame();
+    private JButton createInvoice = new JButton("create invoice") {
         @Override
         protected void fireActionPerformed(ActionEvent event) {
             bootCreateInvoicesFrame();
         }
     };
-    JButton showInvoices = new JButton("show invoice") {
+    private JButton showInvoices = new JButton("show invoice") {
         @Override
         protected void fireActionPerformed(ActionEvent event) {
             bootShowInvoicesFrame();

@@ -31,7 +31,7 @@ public class ShowInvoicesFrame extends JFrame {
         }
     }
 
-    void openInvoice(int id) {
+    private void openInvoice(int id) {
         new InvoiceDialog(InvoiceHandler.getInvoice(id));
     }
 }

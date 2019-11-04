@@ -8,24 +8,24 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class NewInvoiceFrame extends JFrame {
-    NewItemFrame newItem = new NewItemFrame();
-    JTextField deliveryDate = new JTextField(12);
-    JTextField name = new JTextField(15);
-    JTextField surname = new JTextField(20);
-    JTextField pesel = new JTextField(11);
-    JTextField street = new JTextField(30);
-    JTextField city = new JTextField(15);
-    JTextField country = new JTextField(15);
-    JTextField postalCode = new JTextField(6);
-    JTextField houseNr = new JTextField(5);
-    JTextField flatNr = new JTextField(5);
-    JButton addItem = new JButton("add item") {
+    private NewItemFrame newItem = new NewItemFrame();
+    private JTextField deliveryDate = new JTextField(12);
+    private JTextField name = new JTextField(15);
+    private JTextField surname = new JTextField(20);
+    private JTextField pesel = new JTextField(11);
+    private JTextField street = new JTextField(30);
+    private JTextField city = new JTextField(15);
+    private JTextField country = new JTextField(15);
+    private JTextField postalCode = new JTextField(6);
+    private JTextField houseNr = new JTextField(5);
+    private JTextField flatNr = new JTextField(5);
+    private JButton addItem = new JButton("add item") {
         @Override
         protected void fireActionPerformed(ActionEvent event) {
             addItemToInvoice();
         }
     };
-    JButton confirmInvoice = new JButton("confirm invoice") {
+    private JButton confirmInvoice = new JButton("confirm invoice") {
         @Override
         protected void fireActionPerformed(ActionEvent event) {
             confirmInvoice();
@@ -70,9 +70,7 @@ public class NewInvoiceFrame extends JFrame {
     private void confirmInvoice() {
         Address address = Adapter.createAdress(street.getText(), houseNr.getText(), flatNr.getText(), city.getText(), country.getText(), postalCode
         .getText());
-        if(address == null) {
-
-        } else {
+        if(!(address == null)) {
             Adapter.createClient(name.getText(), surname.getText(), pesel.getText(), address);
             Adapter.createInvoice(deliveryDate.getText());
         }
