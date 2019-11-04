@@ -3,7 +3,6 @@
 class blocks.Invoice {
     ID
     client
-
     data wystawienia
     tax()
     totalValue()
@@ -26,13 +25,13 @@ class blocks.InvoiceElement{
     totalValue()
 }
 
-class InvoiceHandler{
+class handlers.InvoiceHandler{
     ArrayList faktury
     createInvoice()
     showInvoice()
 }
 
-class ClientHandler{
+class handlers.ClientHandler{
     ArrayList klienci
     createClient()
     ? addClientToInvoice() ?
@@ -43,12 +42,12 @@ class GUI {
 }
 
 
-GUI -- ClientHandler
-GUI -- InvoiceHandler
+GUI -- handlers.ClientHandler
+GUI -- handlers.InvoiceHandler
 blocks.Invoice *-- blocks.Client
 blocks.Invoice o-- blocks.InvoiceElement
-InvoiceHandler -- blocks.Invoice
-InvoiceHandler - blocks.InvoiceElement
-ClientHandler --- blocks.Client
+handlers.InvoiceHandler -- blocks.Invoice
+handlers.InvoiceHandler - blocks.InvoiceElement
+handlers.ClientHandler --- blocks.Client
 
 @enduml
