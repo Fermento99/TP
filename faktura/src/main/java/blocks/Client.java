@@ -33,7 +33,7 @@ public class Client {
     }
 
     private boolean validate(final int pesel, final Address adress) {
-        return checkPESEL(pesel) && checkAdress(adress);
+        return checkPESEL(pesel) && checkAddress(adress);
 
     }
     //doesn't exist yet
@@ -41,7 +41,7 @@ public class Client {
         return true;
     }
 
-    private boolean checkAdress(final Address adress) {
+    private boolean checkAddress(final Address adress) {
         return Address.check(adress);
     }
 }
