@@ -2,19 +2,19 @@ package blocks;
 
 public class InvoiceElement {
     private final String name;
-    private final double prize;
+    private final double price;
     private final double vat;
     private final int quantity;
 
-    public InvoiceElement(final String name, final double prize, final double vat, final int quantity) {
+    public InvoiceElement(final String name, final double price, final double vat, final int quantity) {
         this.name = name;
-        this.prize = prize;
+        this.price = price;
         this.vat = vat;
         this.quantity = quantity;
     }
 
-    public double getPrize() {
-        return prize;
+    public double getPrice() {
+        return price;
     }
     public String getName() {
         return name;
@@ -26,10 +26,10 @@ public class InvoiceElement {
         return vat;
     }
 
-    public double totalTax() {
-        return prize * vat * quantity;
+    double totalTax() {
+        return price * vat * quantity;
     }
-    public double totalValue() {
-        return quantity * prize;
+    double totalValue() {
+        return quantity * price;
     }
 }

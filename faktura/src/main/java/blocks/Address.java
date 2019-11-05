@@ -4,12 +4,12 @@ public class Address {
     private final String street;
     private final String city;
     private final String country;
-    private final int postalCode;
+    private final String postalCode;
     private final int houseNr;
     private final int flatNr;
 
 
-    public Address(final String street, final String city, final String country, final int postalCode, final int houseNr, final int flatNr) {
+    public Address(final String street, final int houseNr, final int flatNr, final String city, final String country, final String postalCode) {
         this.street = street;
         this.city = city;
         this.country = country;
@@ -34,7 +34,7 @@ public class Address {
         return street;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
@@ -43,7 +43,7 @@ public class Address {
     }
 
     // doesn't exist yet
-    public static boolean check(final Address adress) {
+    static boolean check(final Address adress) {
         return true;
     }
 }

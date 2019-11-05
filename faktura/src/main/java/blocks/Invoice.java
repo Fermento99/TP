@@ -1,14 +1,14 @@
 package blocks;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class Invoice {
-    private final Date deliveryDate;
+    private final String deliveryDate;
     private final int id; //NOPMD
     private final Client client;
-    private final InvoiceElement[] invoiceElements;
+    private final ArrayList<InvoiceElement> invoiceElements;
 
-    public Invoice(final Date deliveryDate, final int id, final Client client, final InvoiceElement[] invoiceElements) { //NOPMD
+    public Invoice(final String deliveryDate, final int id, final Client client, final ArrayList<InvoiceElement> invoiceElements) { //NOPMD
         this.deliveryDate = deliveryDate;
         this.id = id;
         this.client = client;
@@ -19,7 +19,7 @@ public class Invoice {
         return client;
     }
 
-    public Date getDeliveryDate() {
+    public String getDeliveryDate() {
         return deliveryDate;
     }
 
@@ -27,7 +27,7 @@ public class Invoice {
         return id;
     }
 
-    public InvoiceElement[] getInvoiceElements() {
+    public ArrayList<InvoiceElement> getInvoiceElements() {
         return invoiceElements;
     }
 
