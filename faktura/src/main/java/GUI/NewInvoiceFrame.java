@@ -1,6 +1,6 @@
 package GUI;
 
-import adapters.Adapter;
+import adapters.CreationAdapter;
 import blocks.Address;
 
 import javax.swing.*;
@@ -68,11 +68,11 @@ public class NewInvoiceFrame extends JFrame {
         newItem.setVisible(true);
     }
     private void confirmInvoice() {
-        Address address = Adapter.createAdress(street.getText(), houseNr.getText(), flatNr.getText(), city.getText(), country.getText(), postalCode
+        Address address = CreationAdapter.createAddress(street.getText(), houseNr.getText(), flatNr.getText(), city.getText(), country.getText(), postalCode
         .getText());
         if(!(address == null)) {
-            Adapter.createClient(name.getText(), surname.getText(), pesel.getText(), address);
-            Adapter.createInvoice(deliveryDate.getText());
+            CreationAdapter.createClient(name.getText(), surname.getText(), pesel.getText(), address);
+            CreationAdapter.createInvoice(deliveryDate.getText());
         }
         setVisible(false);
     }

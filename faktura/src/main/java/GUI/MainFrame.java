@@ -33,7 +33,6 @@ public class MainFrame extends JFrame {
         new ShowInvoicesFrame();
     }
 
-
     private void bootCreateInvoicesFrame() {
         newFrame.setVisible(true);
     }

@@ -41,8 +41,8 @@ public class Client {
         return true;
     }
 
-    private boolean checkAddress(final Address adress) {
-        return Address.check(adress);
+    private boolean checkAddress(final Address address) {
+        return Address.check(address);
     }
 }
 

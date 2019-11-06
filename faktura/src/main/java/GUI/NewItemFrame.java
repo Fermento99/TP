@@ -1,6 +1,6 @@
 package GUI;
 
-import adapters.Adapter;
+import adapters.CreationAdapter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,7 +36,7 @@ class NewItemFrame extends JFrame {
     }
 
     private void confirmItem() {
-        Adapter.createItem(name.getText(), price.getText(), vat.getText(), quantity.getText());
+        CreationAdapter.createItem(name.getText(), price.getText(), vat.getText(), quantity.getText());
         setVisible(false);
     }
 

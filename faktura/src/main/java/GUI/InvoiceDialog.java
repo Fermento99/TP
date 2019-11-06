@@ -19,8 +19,8 @@ class InvoiceDialog extends JDialog {
         info.add(new JLabel("delivery date: "+invoice.getDeliveryDate()));
         info.add(new JLabel("Client: "));
         info.add(new JLabel("name: "+invoice.getClient().getName()));
-        info.add(new JLabel("surname: "+invoice.getClient().getName()));
-        info.add(new JLabel("pesel: "+invoice.getClient().getName()));
+        info.add(new JLabel("surname: "+invoice.getClient().getSurname()));
+        info.add(new JLabel("pesel: "+invoice.getClient().getPesel()));
         info.add(new JLabel("address: "));
         info.add(new JLabel("street: "+invoice.getClient().getAddress().getStreet()+" "+invoice.getClient().getAddress().getHouseNr()+"/"+invoice.getClient().getAddress().getFlatNr()));
         info.add(new JLabel("city: "+invoice.getClient().getAddress().getCity()+" "+invoice.getClient().getAddress().getCountry()));

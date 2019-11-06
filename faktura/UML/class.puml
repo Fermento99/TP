@@ -3,70 +3,74 @@
 class blocks.Invoice {
     ID
     client
-    data wystawienia
-    tax()
+    deliveryDate
+    invoiceElements
+    totalTax()
     totalValue()
 }
 
 class blocks.Client {
-    Imię
-    Nazwisko
-    Adres
+    name
+    surname
+    Address
     PESEL
     validate()
 }
 
 class blocks.InvoiceElement{
-    Nazwa
-    Cena
-    Stawaka VAT
-    Ilość
-    tax()
+    name
+    price
+    VAT
+    quantity
+    totalTax()
     totalValue()
 }
 
 class handlers.InvoiceHandler{
-    ArrayList faktury
+    ArrayList invoices
+    static invoiceId
     createInvoice()
-    showInvoice()
+    getInvoice(id)
 }
 
 class handlers.ClientHandler{
-    ArrayList klienci
     createClient()
-    ? addClientToInvoice() ?
 }
 
-class adapters.Adapter {
+class adapters.CreationAdapter {
+    tempClient
+    tempInvoiceElements
+    createClient()
+    createItem()
+    createInvoice()
 
 }
-class handlers.InvoiceElementHandler {
 
-}
 
 class GUI.MainFrame{
-
+    bootShowInvoicesFrame()
+    bootCreateInvoicesFrame()
 }
 
 class GUI.NewInvoiceFrame {
-    createInvoice()
+    addItemToInvoice()
+    confirmInvoice()
 }
 
 class GUI.ShowInvoicesFrame {
-    showInvoices()
+    updateInvoices()
+    openInvoice(id)
 }
 
-GUI.NewInvoiceFrame -- adapters.Adapter
+GUI.NewInvoiceFrame -- adapters.CreationAdapter
 GUI.MainFrame -- GUI.ShowInvoicesFrame
 GUI.MainFrame -- GUI.NewInvoiceFrame
 GUI.ShowInvoicesFrame -- handlers.InvoiceHandler
-adapters.Adapter -- handlers.ClientHandler
-adapters.Adapter -- handlers.InvoiceHandler
-adapters.Adapter -- handlers.InvoiceElementHandler
+adapters.CreationAdapter -- handlers.ClientHandler
+adapters.CreationAdapter -- handlers.InvoiceHandler
 blocks.Invoice *- blocks.Client
 blocks.Invoice o-- blocks.InvoiceElement
 handlers.InvoiceHandler -- blocks.Invoice
 handlers.ClientHandler --- blocks.Client
-handlers.InvoiceElementHandler -- blocks.InvoiceElement
 
 @enduml
