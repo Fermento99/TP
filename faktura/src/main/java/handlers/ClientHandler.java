@@ -3,15 +3,15 @@ package handlers;
 import blocks.Address;
 import blocks.Client;
 
-import java.util.ArrayList;
-
-public class ClientHandler {
+public abstract class ClientHandler {
 
     public static Client createClient(final String name, final String surname, final Address address, final int pesel) {
+        Client client = null;
         try {
-            return new Client(name, surname, address, pesel);
+            client = new Client(name, surname, address, pesel);
+        } catch (Exception ex) {
+            System.out.println("ClientHandler: Exception caught" + ex);
         }
-        catch (Exception ex) { System.out.println("ClientHandler: Exception caught"+ex); }
-        return null;
+        return client;
     }
 }

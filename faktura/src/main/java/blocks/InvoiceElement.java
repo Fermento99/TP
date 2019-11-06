@@ -26,10 +26,10 @@ public class InvoiceElement {
         return vat;
     }
 
-    double totalTax() {
+    /* package */ double totalTax() {
         return price * vat * quantity;
     }
-    double totalValue() {
+    /* package */ double totalValue() {
         return quantity * price;
     }
 }

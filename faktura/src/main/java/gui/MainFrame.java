@@ -1,20 +1,20 @@
-package GUI;
+package gui;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class MainFrame extends JFrame {
-    private NewInvoiceFrame newFrame = new NewInvoiceFrame();
-    private JButton createInvoice = new JButton("create invoice") {
+    private final NewInvoiceFrame newFrame = new NewInvoiceFrame();
+    private final JButton createInvoice = new JButton("create invoice") {
         @Override
-        protected void fireActionPerformed(ActionEvent event) {
+        protected void fireActionPerformed(final ActionEvent event) {
             bootCreateInvoicesFrame();
         }
     };
-    private JButton showInvoices = new JButton("show invoice") {
+    private final JButton showInvoices = new JButton("show invoice") {
         @Override
-        protected void fireActionPerformed(ActionEvent event) {
+        protected void fireActionPerformed(final ActionEvent event) {
             bootShowInvoicesFrame();
         }
     };

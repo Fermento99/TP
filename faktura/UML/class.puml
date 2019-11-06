@@ -47,30 +47,30 @@ class adapters.CreationAdapter {
 }
 
 
-class GUI.MainFrame{
+class gui.MainFrame{
     bootShowInvoicesFrame()
     bootCreateInvoicesFrame()
 }
 
-class GUI.NewInvoiceFrame {
+class gui.NewInvoiceFrame {
     addItemToInvoice()
     confirmInvoice()
 }
 
-class GUI.ShowInvoicesFrame {
+class gui.ShowInvoicesFrame {
     updateInvoices()
     openInvoice(id)
 }
 
-GUI.NewInvoiceFrame -- adapters.CreationAdapter
-GUI.MainFrame -- GUI.ShowInvoicesFrame
-GUI.MainFrame -- GUI.NewInvoiceFrame
-GUI.ShowInvoicesFrame -- handlers.InvoiceHandler
+gui.NewInvoiceFrame - adapters.CreationAdapter
+gui.MainFrame -- gui.ShowInvoicesFrame
+gui.MainFrame -- gui.NewInvoiceFrame
+gui.ShowInvoicesFrame --- handlers.InvoiceHandler
 adapters.CreationAdapter -- handlers.ClientHandler
 adapters.CreationAdapter -- handlers.InvoiceHandler
 blocks.Invoice *- blocks.Client
 blocks.Invoice o-- blocks.InvoiceElement
 handlers.InvoiceHandler -- blocks.Invoice
-handlers.ClientHandler --- blocks.Client
+handlers.ClientHandler -- blocks.Client
 
 @enduml

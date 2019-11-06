@@ -6,8 +6,8 @@ import blocks.InvoiceElement;
 
 import java.util.ArrayList;
 
-public class InvoiceHandler {
-    private static ArrayList<Invoice> invoices = new ArrayList<Invoice>();
+public abstract class InvoiceHandler {
+    private static ArrayList<Invoice> invoices = new ArrayList<>();
     private static int invoiceId = 0;
 
     public static void createInvoice(final String deliveryDate, final Client client, final ArrayList<InvoiceElement> invoiceElements) {
@@ -18,5 +18,7 @@ public class InvoiceHandler {
     public static ArrayList<Invoice> getInvoices() {
         return invoices;
     }
-    public static Invoice getInvoice(int id) { return invoices.get(--id); }
+    public static Invoice getInvoice(final int id) {
+        return invoices.get(id - 1);
+    }
 }

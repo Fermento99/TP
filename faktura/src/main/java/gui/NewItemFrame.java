@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import adapters.CreationAdapter;
 
@@ -7,20 +7,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 class NewItemFrame extends JFrame {
-    private JTextField name = new JTextField(5);
-    private JTextField price = new JTextField(5);
-    private JTextField vat = new JTextField(5);
-    private JTextField quantity = new JTextField(5);
-    private JButton confirmItem = new JButton("add item") {
-        @Override
-        protected void fireActionPerformed(ActionEvent event) {
-            confirmItem();
-        }
-    };
+    private final JTextField name = new JTextField(5);
+    private final JTextField price = new JTextField(5);
+    private final JTextField vat = new JTextField(5);
+    private final JTextField quantity = new JTextField(5);
 
-    NewItemFrame() {
+    /* package */ NewItemFrame() {
         super();
-        setLayout(new GridLayout(5,2));
+        setLayout(new GridLayout(5, 2));
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setBounds(0, 0, 300, 300);
         add(new Label("name: "));
@@ -31,7 +25,12 @@ class NewItemFrame extends JFrame {
         add(vat);
         add(new Label("quantity: "));
         add(quantity);
-        add(confirmItem);
+        add(new JButton("add item") {
+            @Override
+            protected void fireActionPerformed(final ActionEvent event) {
+                confirmItem();
+            }
+        });
         setVisible(false);
     }
 

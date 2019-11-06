@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Invoice {
     private final String deliveryDate;
-    private final int id; //NOPMD
+    private final int id;
     private final Client client;
     private final ArrayList<InvoiceElement> invoiceElements;
 
-    public Invoice(final String deliveryDate, final int id, final Client client, final ArrayList<InvoiceElement> invoiceElements) { //NOPMD
+    public Invoice(final String deliveryDate, final int id, final Client client, final ArrayList<InvoiceElement> invoiceElements) {
         this.deliveryDate = deliveryDate;
         this.id = id;
         this.client = client;
@@ -32,7 +32,7 @@ public class Invoice {
     }
 
     public double totalTax() {
-        double ac = 0; //NOPMD
+        double ac = 0;
         for (final InvoiceElement element : invoiceElements) {
             ac += element.totalValue();
         }
@@ -40,7 +40,7 @@ public class Invoice {
     }
 
     public double totalValue() {
-        double ac = 0; //NOPMD
+        double ac = 0;
         for (final InvoiceElement element : invoiceElements) {
             ac += element.totalTax();
         }

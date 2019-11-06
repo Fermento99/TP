@@ -8,6 +8,14 @@ public class Address {
     private final int houseNr;
     private final int flatNr;
 
+    public Address() {
+        street = "";
+        city = "";
+        country = "";
+        postalCode = "";
+        houseNr = 0;
+        flatNr = 0;
+    }
 
     public Address(final String street, final int houseNr, final int flatNr, final String city, final String country, final String postalCode) {
         this.street = street;
@@ -43,7 +51,7 @@ public class Address {
     }
 
     // doesn't exist yet
-    static boolean check(final Address adress) {
+    /* package */ static boolean check(final Address adress) {
         return true;
     }
 }
