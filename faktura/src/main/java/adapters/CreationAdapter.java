@@ -15,26 +15,26 @@ public abstract class CreationAdapter {
         tempClient = ClientHandler.createClient(name, surname, address, Integer.parseInt(pesel));
     }
 
-    public static Address createAddress( final String street, final String houseNr, final String flatNr, final String city, final String country, final String postalCode) {
+    public static Address createAddress(final String street, final String houseNr, final String flatNr, final String city, final String country, final String postalCode) {
         Address address = null;
         try {
-            address =  new Address( street, Integer.parseInt(houseNr), Integer.parseInt(flatNr), city, country, postalCode);
+            address =  new Address(street, Integer.parseInt(houseNr), Integer.parseInt(flatNr), city, country, postalCode);
         } catch (Exception ex) {
             System.out.println("Adapter: Exception caught" + ex);
         }
         return address;
     }
 
-    public static void createItem( final String name, final String price, final String vat, final String quantity) {
+    public static void createItem(final String name, final String price, final String vat, final String quantity) {
         try {
-            tempInvoiceElements.add( new InvoiceElement(name, Double.parseDouble(price), Double.parseDouble(vat), Integer.parseInt(quantity)));
+            tempInvoiceElements.add(new InvoiceElement(name, Double.parseDouble(price), Double.parseDouble(vat), Integer.parseInt(quantity)));
         } catch (Exception ex) {
             System.out.println("Adapter2: Exception caught" + ex);
         }
     }
 
-    public static void createInvoice( final String deliveryDate) {
-        InvoiceHandler.createInvoice( deliveryDate, tempClient, tempInvoiceElements);
+    public static void createInvoice(final String deliveryDate) {
+        InvoiceHandler.createInvoice(deliveryDate, tempClient, tempInvoiceElements);
         tempClient = new Client();
         tempInvoiceElements = new ArrayList<>();
     }

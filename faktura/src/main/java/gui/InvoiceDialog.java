@@ -23,8 +23,8 @@ class InvoiceDialog extends JDialog {
         info.add(new JLabel("surname: " + invoice.getClient().getSurname()));
         info.add(new JLabel("pesel: " + invoice.getClient().getPesel()));
         info.add(new JLabel("address: "));
-        info.add(new JLabel("street: " + invoice.getClient().getAddress().getStreet()+" "+invoice.getClient().getAddress().getHouseNr()+"/"+invoice.getClient().getAddress().getFlatNr()));
-        info.add(new JLabel("city: " + invoice.getClient().getAddress().getCity()+" "+invoice.getClient().getAddress().getCountry()));
+        info.add(new JLabel("street: " + invoice.getClient().getAddress().getStreet() + " " + invoice.getClient().getAddress().getHouseNr() + "/" + invoice.getClient().getAddress().getFlatNr()));
+        info.add(new JLabel("city: " + invoice.getClient().getAddress().getCity() + " " + invoice.getClient().getAddress().getCountry()));
         info.add(new JLabel("postal code: " + invoice.getClient().getAddress().getStreet()));
         info.add(new JLabel("Items"));
         add(info);
@@ -34,7 +34,7 @@ class InvoiceDialog extends JDialog {
         items.add(new JLabel("vat"));
         items.add(new JLabel("quantity"));
         int i = 1;
-        for(final InvoiceElement item : invoice.getInvoiceElements()) {
+        for (final InvoiceElement item : invoice.getInvoiceElements()) {
             items.add(new JLabel(item.getName()));
             items.add(new JLabel(String.valueOf(item.getPrice())));
             items.add(new JLabel(String.valueOf(item.getVat())));
@@ -43,8 +43,8 @@ class InvoiceDialog extends JDialog {
         }
         items.setLayout(new GridLayout(i, 4));
         add(items);
-        add(new JLabel("total price: "+invoice.totalValue()+" zł"));
-        add(new JLabel("total tax: "+invoice.totalTax()+" zł"));
+        add(new JLabel("total price: " + invoice.totalValue() + " zł"));
+        add(new JLabel("total tax: " + invoice.totalTax() + " zł"));
         setVisible(true);
     }
 }
