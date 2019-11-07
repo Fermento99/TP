@@ -26,18 +26,18 @@ class blocks.InvoiceElement{
     totalValue()
 }
 
-class handlers.InvoiceHandler{
+abstract handlers.InvoiceHandler{
     ArrayList invoices
     static invoiceId
     createInvoice()
     getInvoice(id)
 }
 
-class handlers.ClientHandler{
+abstract handlers.ClientHandler{
     createClient()
 }
 
-class adapters.CreationAdapter {
+abstract adapters.CreationAdapter {
     tempClient
     tempInvoiceElements
     createClient()
@@ -62,15 +62,24 @@ class gui.ShowInvoicesFrame {
     openInvoice(id)
 }
 
+interface database.Loader {
+    loadFromDB()
+}
+interface database.Saver {
+    saveInDB()
+}
+
 gui.NewInvoiceFrame - adapters.CreationAdapter
 gui.MainFrame -- gui.ShowInvoicesFrame
 gui.MainFrame -- gui.NewInvoiceFrame
-gui.ShowInvoicesFrame --- handlers.InvoiceHandler
+gui.ShowInvoicesFrame -- handlers.InvoiceHandler
 adapters.CreationAdapter -- handlers.ClientHandler
 adapters.CreationAdapter -- handlers.InvoiceHandler
 blocks.Invoice *- blocks.Client
 blocks.Invoice o-- blocks.InvoiceElement
 handlers.InvoiceHandler -- blocks.Invoice
 handlers.ClientHandler -- blocks.Client
+database.Loader -- adapters.CreationAdapter
+database.Saver - handlers.InvoiceHandler
 
 @enduml

@@ -25,7 +25,7 @@ class InvoiceDialog extends JDialog {
         info.add(new JLabel("address: "));
         info.add(new JLabel("street: " + invoice.getClient().getAddress().getStreet() + " " + invoice.getClient().getAddress().getHouseNr() + "/" + invoice.getClient().getAddress().getFlatNr()));
         info.add(new JLabel("city: " + invoice.getClient().getAddress().getCity() + " " + invoice.getClient().getAddress().getCountry()));
-        info.add(new JLabel("postal code: " + invoice.getClient().getAddress().getStreet()));
+        info.add(new JLabel("postal code: " + invoice.getClient().getAddress().getPostalCode()));
         info.add(new JLabel("Items"));
         add(info);
         final JPanel items = new JPanel();
