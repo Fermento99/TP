@@ -27,7 +27,7 @@ public class InvoiceElement {
     }
 
     /* package */ double totalTax() {
-        return price * vat * quantity;
+        return Math.floor(price * vat * quantity * 100) / 100;
     }
     /* package */ double totalValue() {
         return quantity * price;

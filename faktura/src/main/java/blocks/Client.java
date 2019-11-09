@@ -43,7 +43,6 @@ public class Client {
 
     private boolean validate(/*final int pesel*/ final Address address) {
         return checkPESEL(/*pesel*/) && checkAddress(address);
-
     }
     //doesn't exist yet
     private boolean checkPESEL(/*final int pesel*/) {

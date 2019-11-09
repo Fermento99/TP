@@ -36,7 +36,7 @@ public class Invoice {
         for (final InvoiceElement element : invoiceElements) {
             ac += element.totalValue();
         }
-        return ac;
+        return  Math.floor(ac * 100) / 100;
     }
 
     public double totalTax() {
