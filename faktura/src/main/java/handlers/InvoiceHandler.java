@@ -1,5 +1,7 @@
 package handlers;
 
+import DBManagers.Loader;
+import DBManagers.MockingLoader;
 import blocks.Client;
 import blocks.Invoice;
 import blocks.InvoiceElement;
@@ -15,6 +17,11 @@ public abstract class InvoiceHandler {
         invoices.add(new Invoice(deliveryDate, invoiceId, client, invoiceElements));
     }
 
+    public static void loadInvoicesFromDB() {
+        Loader loader = new MockingLoader();
+        invoices = loader.loadInvoices();
+        invoiceId = loader.updateID();
+    }
     public static ArrayList<Invoice> getInvoices() {
         return invoices;
     }

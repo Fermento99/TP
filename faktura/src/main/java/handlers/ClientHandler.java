@@ -5,7 +5,7 @@ import blocks.Client;
 
 public abstract class ClientHandler {
 
-    public static Client createClient(final String name, final String surname, final Address address, final int pesel) {
+    public static Client createClient(final String name, final String surname, final Address address, final String pesel) {
         Client client = null;
         try {
             client = new Client(name, surname, address, pesel);

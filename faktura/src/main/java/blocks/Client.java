@@ -6,16 +6,16 @@ public class Client {
     private final String name;
     private final String surname;
     private final Address address;
-    private final int pesel;
+    private final String pesel;
 
     public Client() {
         name = "";
         surname = "";
         address = new Address();
-        pesel = 0;
+        pesel = "";
     }
 
-    public Client(final String name, final String surname, final Address address, final int pesel) throws BadAttributeValueExpException {
+    public Client(final String name, final String surname, final Address address, final String pesel) throws BadAttributeValueExpException {
         if (!(validate(/*pesel*/ address))) {
             throw new BadAttributeValueExpException("address");
         }
@@ -33,7 +33,7 @@ public class Client {
         return address;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return pesel;
     }
 

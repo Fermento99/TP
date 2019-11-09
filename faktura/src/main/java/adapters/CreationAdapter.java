@@ -12,7 +12,7 @@ public abstract class CreationAdapter {
     private static Client tempClient;
     private static ArrayList<InvoiceElement> tempInvoiceElements = new ArrayList<>();
     public static void createClient(final String name, final String surname, final String pesel, final Address address) {
-        tempClient = ClientHandler.createClient(name, surname, address, Integer.parseInt(pesel));
+        tempClient = ClientHandler.createClient(name, surname, address, pesel);
     }
 
     public static Address createAddress(final String street, final String houseNr, final String flatNr, final String city, final String country, final String postalCode) {

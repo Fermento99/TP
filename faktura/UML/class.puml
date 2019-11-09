@@ -63,10 +63,11 @@ class gui.ShowInvoicesFrame {
 }
 
 interface database.Loader {
-    loadFromDB()
+    loadInvoices()
+    updateID()
 }
 interface database.Saver {
-    saveInDB()
+    saveInvoices()
 }
 
 gui.NewInvoiceFrame - adapters.CreationAdapter
